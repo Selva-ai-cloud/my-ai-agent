@@ -1,7 +1,7 @@
 """
 SIEM MCP Server
 ===============
-Exposes SIEM capabilities as MCP tools that any AI agent (LangChain, Claude, etc.) can call.
+Exposes SIEM capabilities as MCP tools that any AI agent (LangChain, Claude, etc.) can call. Trail
 
 Tools exposed:
   - search_logs      : Search SIEM events by keyword/query
