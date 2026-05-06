@@ -123,7 +123,7 @@ async def run_agent(query: str):
         await mock_demo()
         return
 
-    server_path = os.path.join(os.path.dirname(__file__), "../mcp_server/siem_server.py")
+    server_path = os.path.join(os.path.dirname(__file__), "siem_server.py")
     
     server_params = StdioServerParameters(
         command="python",
@@ -172,7 +172,7 @@ async def mock_demo():
     from mcp.client.stdio import stdio_client
     import os
 
-    server_path = os.path.join(os.path.dirname(__file__), "../mcp_server/siem_server.py")
+    server_path = os.path.join(os.path.dirname(__file__), "siem_server.py")
     server_params = StdioServerParameters(command="python", args=[server_path])
 
     async with stdio_client(server_params) as (read, write):
