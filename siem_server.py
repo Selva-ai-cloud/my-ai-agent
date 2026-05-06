@@ -14,6 +14,7 @@ Tools exposed:
 import asyncio
 import json
 import random
+import sys
 from datetime import datetime, timedelta
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
@@ -194,7 +195,7 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
 # ── Entry Point ───────────────────────────────────────────────────────────────
 
 async def main():
-    print("[SIEM MCP Server] Starting over stdio...", flush=True)
+    print("[SIEM MCP Server] Starting over stdio...", flush=True, file=sys.stderr)
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
 
